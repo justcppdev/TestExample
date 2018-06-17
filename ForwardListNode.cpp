@@ -1,15 +1,15 @@
 #include "ForwardListNode.h"
 
-ForwardListNode::ForwardListNode() {
-	key = "";
-	next = nullptr;
+ForwardListNode::ForwardListNode(const char * value)
+: next( nullptr )
+{
+	auto length = strlen( value );
+	key = new char[ length + 1 ];
+	strncpy( key, value, length );
+	key[ length ] = '\0';
 }
 
-ForwardListNode::ForwardListNode(const char* value) {
-	key = value;
+ForwardListNode::~ForwardListNode() 
+{
+	delete [] value;
 }
-
-ForwardListNode::~ForwardListNode() {
-}
-
-
