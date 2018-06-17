@@ -1,15 +1,14 @@
-#pragma once
-class ForwardListNode
+struct ForwardListNode
 {
-private:
-	const char* key;
-	ForwardListNode* next;
-public:
-	ForwardListNode();
-	ForwardListNode(const char*);
-	ForwardListNode* getNext() const { return next; }
-	void setNext(ForwardListNode* elem) { this->next = elem; }
-	const char* getKey() const { return key; }
+	const char * key;
+	ForwardListNode * next;
+
+	ForwardListNode(const char * _key = "");
 	~ForwardListNode();
+
+	ForwardListNode(ForwardListNode const &) = delete;
+	ForwardListNode & operator=(ForwardListNode const &) = delete;
+	ForwardListNode(ForwardListNode &&) = delete;
+	ForwardListNode & operator=(ForwardListNode &&) = delete;
 };
 
